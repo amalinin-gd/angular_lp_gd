@@ -1,0 +1,60 @@
+.slider {
+  display: inline-block;
+  height: 30px;
+  width: 340px;
+  position: relative;
+
+  &__sliderBar {
+    display: inline-block;
+    height: 0;
+    border: 1px solid #B8B8B8;
+
+    &--active {
+      border-color: #288575;
+    }
+
+    &--left {
+      left: 0;
+      width: 48px;
+    }
+
+    &--middle {
+      width: 190px;
+    }
+
+    &--right {
+      width: 86px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #288575;
+    border-radius: 100%;
+    cursor: pointer;
+
+    &--left {
+      left: 40px;
+      top: 3px;
+    }
+
+    &--right {
+      left: 234px;
+      bottom: 7px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 24px;
+    left: -5px;
+    color: #000000;
+    font-size: 12px;
+    display: block;
+    width: 30px;
+    text-align: center;
+    cursor: auto;
+  }
+}
