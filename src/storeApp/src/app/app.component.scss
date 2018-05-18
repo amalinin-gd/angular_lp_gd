@@ -1,0 +1,16 @@
+$header-height: 60px;
+$footer-height: 45px;
+$content-height: calc(100vh - #{$header-height} - #{$footer-height});
+
+.app {
+  max-width: 1200px;
+  min-width: 480px;
+  min-height: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.16);
+  font-family: "PT Sans Caption", serif;
+
+  &__content {
+    height: $content-height;
+  }
+}

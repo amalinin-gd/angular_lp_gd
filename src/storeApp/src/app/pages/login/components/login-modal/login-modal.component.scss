@@ -1,0 +1,54 @@
+@import "base/module";
+
+//todo: add a reusable Modal component
+.loginModal {
+  padding-top: 70px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  background-color: #e3e3e3;
+  z-index: 1;
+  @include center(600px, 350px);
+
+  &__header {
+    position: absolute;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.11);
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 22px 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__body {
+    border-radius: 0 0 15px 15px;
+    height: 100%;
+    padding: 30px 40px;
+    color: #000000;
+    font-family: "PT Sans Caption", serif;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &__buttonContainer {
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  &__button {
+    margin-left: 15px;
+  }
+
+  &_tIContainer {
+    display: block;
+    margin: 0 auto 10px;
+    width: 80%;
+  }
+}

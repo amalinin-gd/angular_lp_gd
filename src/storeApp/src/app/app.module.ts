@@ -6,6 +6,7 @@ import {SharedModule} from "./shared/shared.module";
 import { HomeComponent } from './pages/home/home.component';
 import {RouterModule} from "@angular/router";
 import {appRoutes} from './app.routes';
+import {LoginModule} from "./pages/login/login.module";
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {appRoutes} from './app.routes';
   imports: [
     BrowserModule,
     SharedModule,
+    LoginModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
