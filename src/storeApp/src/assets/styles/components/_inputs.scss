@@ -2,8 +2,7 @@
   display: inline-block;
   width: 235px;
 
-  &__textInput[type="text"],
-  &__textInput[type="password"],
+  &__textInput,
   &__textArea {
     display: block;
     width: 100%;
@@ -21,10 +20,14 @@
     &:invalid {
       border: 2px solid #FF0000;
     }
+
+    &--error {
+      border: 2px solid #FF0000;
+    }
   }
 
-  &__textInput[type="text"],
-  &__textInput[type="password"] {
+  &__textInput,
+  &__textInput {
     height: 35px;
     padding-left: 10px;
 

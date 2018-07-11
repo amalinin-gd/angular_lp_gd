@@ -1,16 +1,40 @@
 <div class="loginModal">
   <div class="loginModal__header">Login to "Demo Shop"</div>
   <div class="loginModal__body">
-    <div class="tIContainer loginModal_tIContainer">
-      <label for="login" class="tIContainer__label">Your login:</label>
-      <input type="text" id="login" class="tIContainer__textInput"/>
-    </div>
-    <div class="tIContainer loginModal_tIContainer">
-      <label for="password" class="tIContainer__label">Your password:</label>
-      <input type="password" id="password" class="tIContainer__textInput"/>
-    </div>
-    <div class="loginModal__buttonContainer">
-      <button class="loginModal__button button button--primary button--big">Login</button>
-    </div>
+    <form [formGroup]="loginForm" autocomplete="off">
+      <div class="tIContainer loginModal_tIContainer">
+        <label for="login" class="tIContainer__label">Your login:</label>
+        <input type="text" id="login" class="tIContainer__textInput"
+               formControlName="login"
+               [ngClass]="{'tIContainer__textInput--error': (loginForm.get('login').touched ||
+                                              loginForm.get('login').dirty) &&
+                                              !loginForm.get('login').valid }"/>
+      </div>
+      <div class="loginModal__messages">
+        <div *ngIf="(loginForm.get('login').touched ||
+           loginForm.get('login').dirty) &&
+           loginForm.get('login').errors">
+          <span *ngIf="loginForm.get('login').errors.required">Please enter your login.</span>
+        </div>
+      </div>
+      <div class="tIContainer loginModal_tIContainer">
+        <label for="password" class="tIContainer__label">Your password:</label>
+        <input type="password" formControlName="password" id="password" class="tIContainer__textInput"
+               [ngClass]="{'tIContainer__textInput--error': (loginForm.get('password').touched ||
+                                              loginForm.get('password').dirty) &&
+                                              !loginForm.get('password').valid }"/>
+      </div>
+      <div class="loginModal__messages">
+        <div *ngIf="(loginForm.get('password').touched ||
+           loginForm.get('password').dirty) &&
+           loginForm.get('password').errors">
+          <span *ngIf="loginForm.get('password').errors.required">Please enter your password.</span>
+        </div>
+      </div>
+      <div class="loginModal__buttonContainer">
+        <button type="submit" class="loginModal__button button button--primary button--big"
+                [disabled]="!loginForm.valid">Login</button>
+      </div>
+    </form>
   </div>
 </div>
