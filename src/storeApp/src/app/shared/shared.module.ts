@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserModule }    from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { RadioButtonGroupComponent } from './components/radio-button-group/radio-button-group.component';
 import { SliderComponent } from './components/slider/slider.component';
@@ -8,7 +10,9 @@ import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    HttpClientModule
   ],
   declarations: [
     CheckboxComponent,
